@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="helloWorld" class="com.example.beans.HelloWorld">
+              <property name="message" value="Welcome in Spring" />
+       </bean>
+       <bean id="emailService" class="com.example.beans.EmailService"></bean>
+       <bean id="messageSender" class="com.example.beans.MessageSender">
+              <constructor-arg ref="emailService"/>
+              <property name="message" value="Message from XML"/>
+       </bean>
+</beans>
