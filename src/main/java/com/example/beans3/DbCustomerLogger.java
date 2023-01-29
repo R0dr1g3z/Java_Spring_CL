@@ -8,8 +8,8 @@ public class DbCustomerLogger implements CustomerLogger{
 
     @Override
     public void log() {
-        try (PreparedStatement preparedStatement = DbUtil.connect().prepareStatement("INSERT INTO log (log) VALUES (?)")){
-            preparedStatement.setString(1, LocalDateTime.now() + ": User log");
+        try (PreparedStatement preparedStatement = DbUtil.connect().prepareStatement("INSERT INTO logs (log) VALUES (?)")){
+            preparedStatement.setString(1, LocalDateTime.now() + ": User Operation");
             preparedStatement.executeUpdate();
         } catch (SQLException e){}
     }

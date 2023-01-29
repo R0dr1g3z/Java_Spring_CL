@@ -9,7 +9,7 @@ public class DbUtil {
         final String DB_URL = "jdbc:mysql://localhost:3306";
         final String DB_USER = "root";
         final String DB_PASS = "coderslab123";
-        final String DATABASE = "CustomerLogger";
+        final String DATABASE = "Customers";
         String connStr = String.format("%s/%s?useSSL=false&characterSet=utf8mb4&serverTimezone=UTC", DB_URL, DATABASE);
         Connection connection = DriverManager.getConnection(connStr, DB_USER, DB_PASS);
         return connection;
