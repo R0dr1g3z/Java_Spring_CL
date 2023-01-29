@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import com.example.beans3.DbCustomerLogger;
 import com.example.beans3.FileCustomerLogger;
 import com.example.beans3.MemoryCustomerRepository;
 import com.example.beans3.SimpleCustomerLogger;
@@ -21,8 +22,12 @@ public class AppConfig {
     }
 
     @Bean
-    @Primary
     public FileCustomerLogger fileCustomerLogger() {
         return new FileCustomerLogger();
+    }
+    @Bean
+    @Primary
+    public DbCustomerLogger dbCustomerLogger(){
+        return new DbCustomerLogger();
     }
 }
