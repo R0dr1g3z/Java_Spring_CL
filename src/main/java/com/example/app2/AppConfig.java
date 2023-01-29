@@ -1,6 +1,7 @@
 package com.example.app2;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
@@ -11,6 +12,7 @@ import com.example.beans2.ScopeSingleton;
 import com.example.beans2.Ship;
 
 @Configuration
+@ComponentScan("com.example.beans2")
 public class AppConfig {
     @Bean
     public HelloWorld helloWorld() {

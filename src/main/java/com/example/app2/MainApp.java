@@ -3,6 +3,7 @@ package com.example.app2;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.example.beans2.HelloWorld;
+import com.example.beans2.PersonService;
 import com.example.beans2.ScopePrototype;
 import com.example.beans2.ScopeSingleton;
 import com.example.beans2.Ship;
@@ -24,6 +25,8 @@ public class MainApp {
         System.out.println(prototype1);
         System.out.println(prototype2);
         System.out.println((prototype1 == prototype2) + ": different objects");
+        PersonService person = context.getBean(PersonService.class);
+        System.out.println(person.getPersonRepo().getClass().getName());
         context.close();
     }
 }
